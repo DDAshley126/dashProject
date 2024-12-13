@@ -1,13 +1,3 @@
-#!/usr/bin/env python
-# -*- coding: UTF-8 -*-
-'''
-@Project ：dashProject 
-@File    ：api.py
-@IDE     ：PyCharm 
-@Author  ：Du Manting
-@Date    ：2024/10/16 14:45 
-'''
-
 from models.Models import Order
 from models.Models import db
 

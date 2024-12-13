@@ -1,14 +1,3 @@
-# 配置文件
-# 配置文件
-UPLOAD_DIRECTORY = 'E:\\数据集'
-
-# 数据库
-USERNAME = 'root'
-PASSWORD = '123456'
-HOSTNAME = 'localhost'
-PORT = '3306'
-DATABASE = 'dashboard_dash'
-
 # style格式
 SIDEBAR_ICON_STYLE = {
     'color': 'white',
