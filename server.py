@@ -3,7 +3,7 @@ import dash
 from dash import html, dcc
 from flask import request, send_from_directory
 import dash_bootstrap_components as dbc
-from cfg import *
+from assets.cfg import *
 
 
 # 实例化应用

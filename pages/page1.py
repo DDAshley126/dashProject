@@ -8,6 +8,6 @@ import dash_bootstrap_components as dbc
 dash.register_page(__name__, path='/page1')
 layout = dbc.Container(
     [
-        html.H3('广州外呼'),
+        html.H3('test'),
     ]
 )

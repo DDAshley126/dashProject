@@ -9,16 +9,18 @@ def init_db(app):
 
 
 # Create your models here.
-class Order(db.Model):
-    '''工单量表'''
-    __tablename__ = 'order_dwd'
+class Behavior(db.Model):
+    '''淘宝点击行为表'''
+    __tablename__ = 'user_behavior'
 
-    type = db.Column(db.String(255), primary_key=True, comment='业务类型')
-    name = db.Column(db.String(255), primary_key=True, comment='业务名称')
-    date = db.Column(db.String(255), primary_key=True, comment='下单时间')
-    year_and_month = db.Column(db.String(255), comment='下单年月')
-    amount = db.Column(db.Integer, comment='工单量')
-    update_time = db.Column(db.String(255), comment='更新时间')
+    UserID = db.Column(db.String(255), comment='用户ID')
+    ItemID = db.Column(db.String(255), comment='商品ID')
+    CategoryID = db.Column(db.String(255), comment='种类ID')
+    BehaviorType = db.Column(db.String(255), comment='行为种类')
+    Timestamp = db.Column(db.String(255), comment='时间')
+
+    def __repr__(self):
+        return "<Behavior %r>" % self.name
 
 
 def query2dict(model_list):
@@ -44,3 +46,4 @@ def query2dict(model_list):
             return dic
         else:   # 这种方式获得了数据库中的个别字段  相当于select id,name from table limit = 1
             return dict(zip(model_list.keys(), model_list))
+
