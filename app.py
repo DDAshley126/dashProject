@@ -10,7 +10,7 @@ from views.plot import user_activation_plot
 
 
 app.layout = dbc.Container([
-    html.Div('header', id='header'),
+    html.Div('header'),
     html.Div('用户维度'),
     dbc.Row([DashECharts(option=user_activation_plot(), id='user-activation day', style={'height': '250px'})]),
     dbc.Row(id='user-activation hour'),
