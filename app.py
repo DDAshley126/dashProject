@@ -4,38 +4,17 @@ from dash import Dash
 from dash import html, dcc, Output, Input, callback
 import dash_bootstrap_components as dbc
 from server import app
-from models import api
+from dash_echarts import DashECharts
 from callbacks import callbacks
+from views.plot import user_activation_plot
 
 
-data = pd.read_csv('./dataset/behavior_data.csv')
-app.layout = html.Div([
-    fac.AntdTable(
-        columns=[
-            {
-                'title': '用户ID',
-                'dataIndex': '用户ID'
-            },
-            {
-                'title': '商品ID',
-                'dataIndex': '商品ID'
-            },
-            {
-                'title': '类别ID',
-                'dataIndex': '类别ID'
-            },
-            {
-                'title': '行为ID',
-                'dataIndex': '行为ID'
-            },
-            {
-                'title': '时间',
-                'dataIndex': '时间'
-            },
-        ],
-        data=data.to_dict('records'),
-        pagination={'pageSize': '5'}
-    )
+app.layout = dbc.Container([
+    html.Div('header', id='header'),
+    html.Div('用户维度'),
+    dbc.Row([DashECharts(option=user_activation_plot(), id='user-activation day', style={'height': '250px'})]),
+    dbc.Row(id='user-activation hour'),
+    html.Div('商品维度'),
 ])
 
 
