@@ -5,9 +5,10 @@ import numpy as np
 import dash_bootstrap_components as dbc
 
 
-dash.register_page(__name__, path='/page1')
+dash.register_page(__name__, path='/')
+
 layout = dbc.Container(
     [
-        html.Div('test'),
+        html.Div('Home'),
     ]
 )
